@@ -1,0 +1,49 @@
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ScriptService {
+  private renderer: Renderer2
+
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private rendererFactory: RendererFactory2
+  ) {
+    this.renderer = this.rendererFactory.createRenderer(null, null);
+  }
+ 
+ /**
+  * Append the JS tag to the Document Body.
+  * @param src The path to the script
+  * @returns the script element
+  */
+  public loadJsScript(src: string): HTMLScriptElement {
+    const script = this.renderer.createElement('script');
+    script.type = 'text/javascript';
+    script.src = src;
+    this.renderer.appendChild(this.document.body, script);
+    return script;
+  }
+
+  /**
+   *
+   * load js external and paste properties
+   * @param {string} src
+   * @param {*} options
+   * @return {*}  {HTMLScriptElement}
+   * @memberof ScriptService
+   */
+  public loadJsScriptEmbed(src: string, options: any): HTMLScriptElement {
+    const script = this.renderer.createElement('script');
+    script.type = 'text/javascript';
+    script.src = src;
+    script.async = true;
+    script.text = JSON.stringify(options);
+    this.renderer.appendChild(this.document.body, script);
+    return script;
+  }
+
+  
+}
