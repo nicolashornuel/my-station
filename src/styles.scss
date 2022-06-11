@@ -1,1 +1,126 @@
+@use 'themes' as *;
+
+@use '@nebular/theme/styles/globals' as *;
+
+@include nb-install() {
+  @include nb-theme-global();
+};
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.block-center {
+  margin: 0 auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.text-danger {
+  color: red;
+}
+
+.text-danger {
+  color: green;
+}
+
+
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+
+
+/* grid styles */
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-center-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.col-center-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+$columns: 12; // number of columns in the grid system
+@for $width from 1 through $columns {
+  .col-#{$width} {
+    flex-basis: $width / $columns * 100%;
+  }
+}
+
+@for $number from 1 through 10 {
+  .gap-#{$number} {
+    gap: $number * 1%;
+  }
+}
+
+
+@for $number from 1 through 10 {
+  .pt-#{$number} {
+    padding-top: $number * 5px;
+  }
+  .pb-#{$number} {
+    padding-bottom: $number * 5px;
+  }
+  .pr-#{$number} {
+    padding-right: $number * 5px;
+  }
+  .pl-#{$number} {
+    padding-left: $number * 5px;
+  }
+  .px-#{$number} {
+    padding-right: $number * 5px;
+    padding-left: $number * 5px;
+  }
+  .py-#{$number} {
+    padding-top: $number * 5px;
+    padding-bottom: $number * 5px;
+  }
+  .p-#{$number} {
+    padding-top: $number * 5px;
+    padding-bottom: $number * 5px;
+    padding-right: $number * 5px;
+    padding-left: $number * 5px;
+  }
+}
+

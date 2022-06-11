@@ -1,0 +1,32 @@
+<ng-container *ngIf="viewValue; else viewData">{{ viewValue }}</ng-container>
+<ng-template #viewData>
+  <ng-container [ngSwitch]="settings.type">
+    <ng-container *ngSwitchCase="'custom'" [ngTemplateOutlet]="custom"></ng-container>
+    <ng-container *ngSwitchCase="'html'" [ngTemplateOutlet]="html"></ng-container>
+    <ng-container *ngSwitchCase="'string'" [ngTemplateOutlet]="string"></ng-container>
+    <ng-container *ngSwitchCase="'number'" [ngTemplateOutlet]="string"></ng-container>
+    <ng-container *ngSwitchCase="'date'" [ngTemplateOutlet]="string"></ng-container> </ng-container
+></ng-template>
+
+<!-- <ng-template #custom cellHost >
+    <ng-container #target>
+
+    </ng-container>
+    
+</ng-template> -->
+
+<ng-template #custom >
+
+</ng-template>
+
+<ng-template #html>
+    <div [innerHTML]="settings.valuePrepare(data)"></div>
+</ng-template>
+
+<ng-template #string>
+    <ng-container *ngIf="settings.valuePrepare; else noPrepare">
+        {{ settings.valuePrepare(data) }}
+    </ng-container>
+    <ng-template #noPrepare>  {{ data }}</ng-template>
+
+</ng-template>

@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ScriptService} from '../service/script.service';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ScriptService } from '../service/script.service';
 
 declare let TradingView: any;
 
@@ -13,8 +13,8 @@ export class WidgetChartComponent implements OnInit {
   private name: string = 'Chart';
   private SCRIPT_PATH: string = 'https://s3.tradingview.com/tv.js';
   public options = {
-    width: 980,
-    height: 610,
+    width: 980, //980
+    height: 610, //610
     //autosize: true,
     symbol: 'FX:EURUSD',
     interval: 'D',
@@ -28,12 +28,17 @@ export class WidgetChartComponent implements OnInit {
     save_image: false,
     container_id: 'tradingview_e655f'
   };
+  @Input() symbolSelected!: string;
 
   constructor(private scriptService: ScriptService) {}
 
   ngOnInit(): void {
     this.displayWidget();
+    this.options.symbol = this.symbolSelected;
+    this.options.height = window.innerHeight - 178;
+    this.options.width = window.innerWidth - 178;
   }
+
 
   /**
    *
@@ -45,7 +50,7 @@ export class WidgetChartComponent implements OnInit {
     const scriptElement = this.scriptService.loadJsScript(this.SCRIPT_PATH);
     scriptElement.onload = () => {
       console.log(`Tradingview ${this.name} Script loaded`);
-      new TradingView.widget(this.options)
+      new TradingView.widget(this.options);
     };
     scriptElement.onerror = () => {
       console.log(`Could not load the Tradingview ${this.name} Script!`);

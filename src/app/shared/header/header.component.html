@@ -1,0 +1,14 @@
+<div class="header-container">
+    <div class="logo-container">
+      <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+        <nb-icon icon="menu-2-outline"></nb-icon>
+      </a>
+      <a class="logo" routerLink="/trading">My-<span>Station</span></a>
+    </div>
+    <div class="btn-menu">
+  
+      <button outline nbButton [nbContextMenu]="items" nbContextMenuTag="admin-context-menu">
+        Admin
+      </button>
+    </div>
+  </div>

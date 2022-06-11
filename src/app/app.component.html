@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<nb-layout>
+
+  <nb-layout-header fixed class="header-menu" *ngIf="isLoggedIn$ | async">
+  <app-header></app-header>
+  </nb-layout-header>
+
+  <nb-sidebar tag="menu-sidebar" state="compacted" *ngIf="isLoggedIn$ | async">
+    <app-sidebar></app-sidebar>
+  </nb-sidebar>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+</nb-layout>

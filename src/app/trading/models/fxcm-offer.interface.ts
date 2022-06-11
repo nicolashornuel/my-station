@@ -1,0 +1,30 @@
+export interface FxcmOffer {
+  buy: number;
+  buyTradable: boolean;
+  currency: string;
+  defaultSortOrder: number;
+  emr: number;
+  fractionDigits: number;
+  high: number;
+  instrBaseUnitSize: number;
+  instrumentType: number;
+  lmr: number;
+  low: number;
+  maxQuantity: number;
+  minQuantity: number;
+  mmr: number;
+  offerId: number;
+  pip: number;
+  pipCost: number;
+  pipFraction: number;
+  ratePrecision: number;
+  rollB: number;
+  rollS: number;
+  sell: number;
+  sellTradable: boolean;
+  spread: number;
+  t: number;
+  time: string;
+  valueDate: string;
+  volume: number;
+}

@@ -1,0 +1,15 @@
+<ng-container *ngIf="offers; else spinner">
+  <app-table [tableSet]="tableSet" [columns]="columns" [data]="offers"></app-table>
+  <div class="row">
+    <nb-card>
+      <nb-card-body appWidgetForexHeatMap> </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-body appWidgetScreener> </nb-card-body>
+    </nb-card>
+  </div>
+</ng-container>
+
+<ng-template #spinner>
+  <nb-spinner></nb-spinner>
+</ng-template>

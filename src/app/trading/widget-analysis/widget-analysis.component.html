@@ -1,0 +1,22 @@
+<nb-layout>
+    <nb-layout-column>
+      <nb-select
+        class="col-2"
+        type="text"
+        size="small"
+        status="primary"
+        placeholder="symbol"
+        fullWidth
+        [(selected)]="symbolSelected"
+      >
+        <nb-option [value]="symbol" *ngFor="let symbol of symbols">{{ symbol }}</nb-option>
+      </nb-select>
+      <div class="scrollable">
+        <ng-container *ngFor="let interval of intervals">
+          <p class="row divider">{{ interval }}</p>
+          <div class="scale-analysis" appWidgetAnalysis [symbol]="symbolSelected" [interval]="interval"></div>
+        </ng-container>
+      </div>
+
+    </nb-layout-column>
+  </nb-layout>

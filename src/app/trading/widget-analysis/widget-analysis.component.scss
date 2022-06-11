@@ -1,0 +1,21 @@
+$width-analysis: 425px;
+$height-analysis: 450px;
+
+.scale-analysis {
+    transform: scale(0.5) translate(-90px, -210px);
+    width: calc($width-analysis * 0.5);
+    height: calc($height-analysis * 0.25);
+    clip-path: inset(99px -189px -301px);
+  }
+  
+  .divider {
+    border-top: 2px solid hsl(0, 0, 80%);
+    padding-top: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: hsl(0, 0, 60%);
+  }
+  .scrollable {
+    height: calc(100vh - 179px);
+    overflow-y: scroll;
+  }

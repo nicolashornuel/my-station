@@ -121,9 +121,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@nebular/theme/styles/prebuilt/corporate.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "my-station:build:production",
+            "firebaseProject": "my-station-a49f7",
+            "firebaseHostingSite": "my-station-a49f7"
           }
         }
       }

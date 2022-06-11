@@ -1,0 +1,21 @@
+<ng-container *ngIf="symbolSelected; else spinner">
+  <nb-card>
+    <nb-card-body>
+      <app-widget-chart [symbolSelected]="symbolSelected"></app-widget-chart>
+    </nb-card-body>
+  </nb-card>
+  
+  <ng-container *ngFor="let tab of tabs; let i = index">
+    <app-right-bar
+      [symbolSelected]="symbolSelected"
+      [settings]="tab"
+      (openEvent)="openTab(i)"
+      [rightBarOpened]="i === indexTab ? true : false"
+    ></app-right-bar>
+  </ng-container>
+</ng-container>
+
+
+<ng-template #spinner>
+  <nb-spinner></nb-spinner>
+</ng-template>

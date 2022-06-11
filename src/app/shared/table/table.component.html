@@ -1,0 +1,16 @@
+<section class="scrolling">
+  <div class="table">
+    <div class="table-row header">
+      <app-table-cell
+        *ngFor="let column of columns"
+        [viewValue]="column.title"
+        class="table-cell"
+        [ngClass]="tableSet.verticaltextHeader ? 'vertical' : ' '"
+      ></app-table-cell>
+    </div>
+    <div class="table-row body hover" *ngFor="let row of data" (click)="openDetail(row)">
+      <app-table-cell *ngFor="let column of columns" [data]="row[column.key]" [settings]="column" class="table-cell"></app-table-cell>
+    </div>
+  </div>
+
+</section>

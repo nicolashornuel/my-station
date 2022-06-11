@@ -1,0 +1,9 @@
+$width-widget: 770px;
+$height-widget: 400px;
+$scale: 0.75;
+
+.scale-widget {
+  transform: scale($scale) translateX(-97px);
+  width: calc($width-widget * $scale);
+  height: calc($height-widget * $scale);
+}

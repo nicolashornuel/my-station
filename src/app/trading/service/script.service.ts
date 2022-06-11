@@ -1,24 +1,23 @@
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import {DOCUMENT} from '@angular/common';
+import {Inject, Injectable, Renderer2, RendererFactory2} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScriptService {
-  private renderer: Renderer2
+  private renderer: Renderer2;
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private rendererFactory: RendererFactory2
-  ) {
+  constructor(@Inject(DOCUMENT) private document: Document, private rendererFactory: RendererFactory2) {
     this.renderer = this.rendererFactory.createRenderer(null, null);
   }
- 
- /**
-  * Append the JS tag to the Document Body.
-  * @param src The path to the script
-  * @returns the script element
-  */
+
+  /**
+   * Append the JS tag to the Document Body.
+   *
+   * @param {string} src
+   * @return {*}  {HTMLScriptElement}
+   * @memberof ScriptService
+   */
   public loadJsScript(src: string): HTMLScriptElement {
     const script = this.renderer.createElement('script');
     script.type = 'text/javascript';
@@ -28,22 +27,25 @@ export class ScriptService {
   }
 
   /**
+   * Append the JS tag to the Document Body.
    *
-   * load js external and paste properties
-   * @param {string} src
-   * @param {*} options
+   * @param {*} scriptElt
    * @return {*}  {HTMLScriptElement}
    * @memberof ScriptService
    */
-  public loadJsScriptEmbed(src: string, options: any): HTMLScriptElement {
-    const script = this.renderer.createElement('script');
+  public loadJsScriptEmbed(scriptElt: any): HTMLScriptElement {
+    let script: HTMLScriptElement = this.renderer.createElement('script');
     script.type = 'text/javascript';
-    script.src = src;
+    script.src = scriptElt.src;
     script.async = true;
-    script.text = JSON.stringify(options);
-    this.renderer.appendChild(this.document.body, script);
+    script.text = JSON.stringify(scriptElt.text);
+    this.renderer.appendChild(scriptElt.parentElt.nativeElement, script);
+    script.onload = () => {
+      console.log(`Tradingview ${scriptElt.name} Script loaded`);
+    };
+    script.onerror = () => {
+      console.log(`Could not load the Tradingview ${scriptElt.name} Script!`);
+    };
     return script;
   }
-
-  
 }

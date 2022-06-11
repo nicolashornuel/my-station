@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "my-station-a49f7": {
+      "hosting": {
+        "my-station": [
+          "my-station-a49f7"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "my-station-a49f7"
+  }
+}

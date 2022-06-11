@@ -1,0 +1,60 @@
+<ng-container *ngIf="instruments; else spinner">
+    <form novalidate (ngSubmit)="save()" #form="ngForm">
+
+  <nb-card>
+      <!-- HEADER -->
+      <nb-card-header>Instruments FXCM usable in TradingView</nb-card-header>
+
+      <!-- BODY -->
+      <nb-card-body class="row px-10">
+
+        <section class="col-4 row-center-center py-2 px-10 gap-1" *ngFor="let instrument of instruments">
+          <label class="col-4">{{ instrument.fxcmName }}</label>
+
+          <nb-checkbox
+            class="col-3"
+            [status]="instrument.isUsable ? 'success' : 'basic'"
+            [(checked)]="instrument.isUsable"
+          >
+            <span *ngIf="instrument.isUsable">Usable</span>
+            <span *ngIf="!instrument.isUsable">Use this : </span>
+          </nb-checkbox>
+
+          <ng-container *ngIf="!instrument.isUsable; else noInput">
+            <nb-form-field class="col-5">
+              <input
+                nbInput
+                type="text"
+                [placeholder]="instrument.tradingViewName"
+                fieldSize="small"
+                [(ngModel)]="instrument.tradingViewName"
+                #input="ngModel"
+                [disabled]="instrument.isUsable"
+                [name]="instrument.fxcmName"
+                [status]="input.touched && input.invalid ? 'danger' : 'success'"
+                [required]="true"
+              />
+              <span class="error-message" *ngIf="input.touched && input.invalid && input.errors?.['required']">
+                Input is required!
+              </span>
+            </nb-form-field>
+          </ng-container>
+          <ng-template #noInput>
+            <div class="col-5"></div>
+          </ng-template>
+        </section>
+
+      </nb-card-body>
+
+      <!-- FOOTER -->
+      <nb-card-footer class="row-center-end gap-2">
+        <button nbButton status="success" [disabled]="!form.valid" [nbSpinner]="isLoading">Save</button>
+      </nb-card-footer>
+  </nb-card>
+</form>
+
+</ng-container>
+
+<ng-template #spinner>
+  <nb-spinner></nb-spinner>
+</ng-template>

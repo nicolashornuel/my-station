@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ScriptService} from '../service/script.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { SymbolType } from '../models/symbol.enum';
+import { IntervalType } from '../models/tv-analysis.interface';
 
 @Component({
   selector: 'app-widget-analysis',
@@ -7,39 +8,15 @@ import {ScriptService} from '../service/script.service';
   styleUrls: ['./widget-analysis.component.scss']
 })
 export class WidgetAnalysisComponent implements OnInit {
-  //https://fr.tradingview.com/widget/technical-analysis/
-  private name: string = 'Analysis';
-  private SCRIPT_PATH: string = 'https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js';
-  public options = {
-    interval: '1m',
-    width: 425,
-    isTransparent: false,
-    height: 450,
-    symbol: 'NASDAQ:AAPL',
-    showIntervalTabs: true,
-    locale: 'fr',
-    colorTheme: 'light'
-  };
 
-  constructor(private scriptService: ScriptService) {}
+  @Input()
+  public symbolSelected = SymbolType.EURUSD;
+  public symbols: string[] = Object.values(SymbolType);
+  public intervals: string[] = Object.values(IntervalType);
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.displayWidget();
   }
 
-  /**
-   *
-   *
-   * @private
-   * @memberof WidgetAnalysisComponent
-   */
-  private displayWidget() {
-    const scriptElement = this.scriptService.loadJsScriptEmbed(this.SCRIPT_PATH, this.options);
-    scriptElement.onload = () => {
-      console.log(`Tradingview ${this.name} Script loaded`);
-    };
-    scriptElement.onerror = () => {
-      console.log(`Could not load the Tradingview ${this.name} Script!`);
-    };
-  }
 }

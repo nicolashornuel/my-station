@@ -1,0 +1,62 @@
+<!-- <article class="right-bar row" [ngClass]="rightBarOpened ? 'open' : 'close'">
+  <div class="row-center-center">
+    <div class="col">
+      <section class="tab-blue">
+        <div class="radius-inverted bottom-right"></div>
+      <div class="tab-icon col-center-center" (click)="rightBarOpened = !rightBarOpened">
+        <p class="text-vertical">Analysis</p>
+      </div>
+      <div class="radius-inverted top-right"></div>
+      </section>
+    </div>
+
+    <div class="tab-content">
+      <nb-layout>
+        <nb-layout-column>
+          <nb-select
+            class="col-2"
+            type="text"
+            size="small"
+            status="primary"
+            placeholder="symbol"
+            fullWidth
+            [(selected)]="symbolSelected"
+          >
+            <nb-option [value]="symbol" *ngFor="let symbol of symbols">{{ symbol }}</nb-option>
+          </nb-select>
+          <div class="scrollable">
+            <ng-container *ngFor="let interval of intervals">
+              <p class="row divider">{{ interval }}</p>
+              <div class="scale-analysis" appWidgetAnalysis [symbol]="symbolSelected" [interval]="interval"></div>
+            </ng-container>
+          </div>
+
+        </nb-layout-column>
+      </nb-layout>
+    </div>
+  </div>
+</article>
+ -->
+
+
+
+ <article class="right-bar row" [ngClass]="rightBarOpened ? 'open' : 'close'"
+ [style.--color]="settings.color"
+ [style.--margin-top]="settings.marginTop"
+ [style.--width]="settings.width"
+>
+  <div class="row-center-center">
+    <div class="col tab-container">
+        <div class="radius-inverted bottom-right"></div>
+      <div class="tab-icon col-center-center" (click)="open()">
+        <p class="text-vertical">{{settings.title}}</p>
+      </div>
+      <div class="radius-inverted top-right"></div>
+    </div>
+
+    <div class="tab-content">
+      <div #targetContainer></div>
+    </div>
+  </div>
+</article>
+
