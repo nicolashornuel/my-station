@@ -1,0 +1,1151 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>my-station documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">my-station documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  InstrumentListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/trading/instrument-list/instrument-list.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-instrument-list</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./instrument-list.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./instrument-list.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#columns" >columns</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#instruments" >instruments</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#keyOffers" >keyOffers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#offers" >offers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#tableSet" >tableSet</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#callService" >callService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getInstruments" >getInstruments</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getModel" >getModel</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fxcmService: <a href="../injectables/FxcmService.html" target="_self">FxcmService</a>, destroy$: <a href="../injectables/DestroyService.html" target="_self">DestroyService</a>, util: <a href="../injectables/UtilService.html" target="_self">UtilService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="170" class="link-to-prism">src/app/trading/instrument-list/instrument-list.component.ts:170</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fxcmService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FxcmService.html" target="_self" >FxcmService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>destroy$</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DestroyService.html" target="_self" >DestroyService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>util</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UtilService.html" target="_self" >UtilService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="callService"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>callService</b></span>
+                        <a href="#callService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>callService(req: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, callback: (res: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>) => void)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">src/app/trading/instrument-list/instrument-list.component.ts:215</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>req</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>callback</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInstruments"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getInstruments</b></span>
+                        <a href="#getInstruments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getInstruments()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="178"
+                            class="link-to-prism">src/app/trading/instrument-list/instrument-list.component.ts:178</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getModel"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getModel</b></span>
+                        <a href="#getModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getModel()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="191"
+                            class="link-to-prism">src/app/trading/instrument-list/instrument-list.component.ts:191</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="174"
+                            class="link-to-prism">src/app/trading/instrument-list/instrument-list.component.ts:174</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="columns"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>columns</b></span>
+                        <a href="#columns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ColumnSet.html" target="_self" >ColumnSet[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      key: &#x27;buy&#x27;,
+      title: &#x27;buy&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;buyTradable&#x27;,
+      title: &#x27;buyTradable&#x27;,
+      type: &#x27;boolean&#x27;
+    },
+    {
+      key: &#x27;currency&#x27;,
+      title: &#x27;currency&#x27;,
+      type: &#x27;string&#x27;
+    },
+    {
+      key: &#x27;defaultSortOrder&#x27;,
+      title: &#x27;defaultSortOrder&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;emr&#x27;,
+      title: &#x27;emr&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;fractionDigits&#x27;,
+      title: &#x27;fractionDigits&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;high&#x27;,
+      title: &#x27;high&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;instrBaseUnitSize&#x27;,
+      title: &#x27;instrBaseUnitSize&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;instrumentType&#x27;,
+      title: &#x27;instrumentType&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;lmr&#x27;,
+      title: &#x27;lmr&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;low&#x27;,
+      title: &#x27;low&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;maxQuantity&#x27;,
+      title: &#x27;maxQuantity&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;minQuantity&#x27;,
+      title: &#x27;minQuantity&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;mmr&#x27;,
+      title: &#x27;mmr&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;offerId&#x27;,
+      title: &#x27;offerId&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;pip&#x27;,
+      title: &#x27;pip&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;pipCost&#x27;,
+      title: &#x27;pipCost&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;pipFraction&#x27;,
+      title: &#x27;pipFraction&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;ratePrecision&#x27;,
+      title: &#x27;ratePrecision&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;rollB&#x27;,
+      title: &#x27;rollB&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;rollS&#x27;,
+      title: &#x27;rollS&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;sell&#x27;,
+      title: &#x27;sell&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;sellTradable&#x27;,
+      title: &#x27;sellTradable&#x27;,
+      type: &#x27;boolean&#x27;
+    },
+    {
+      key: &#x27;spread&#x27;,
+      title: &#x27;spread&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;t&#x27;,
+      title: &#x27;t&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;time&#x27;,
+      title: &#x27;time&#x27;,
+      type: &#x27;string&#x27;,
+      valuePrepare: (value: string) &#x3D;&gt; this.util.getDate(value)
+    },
+    {
+      key: &#x27;valueDate&#x27;,
+      title: &#x27;valueDate&#x27;,
+      type: &#x27;custom&#x27;,
+      valuePrepare: (value: string) &#x3D;&gt; {
+        return {link: &#x60;/list&#x60;, value};
+      },
+      renderComponent: ButtonComponent
+    },
+    {
+      key: &#x27;volume&#x27;,
+      title: &#x27;volume&#x27;,
+      type: &#x27;number&#x27;
+    }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/trading/instrument-list/instrument-list.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="instruments"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>instruments</b></span>
+                        <a href="#instruments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/trading/instrument-list/instrument-list.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="keyOffers"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>keyOffers</b></span>
+                        <a href="#keyOffers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/trading/instrument-list/instrument-list.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="offers"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>offers</b></span>
+                        <a href="#offers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/FxcmOffer.html" target="_self" >FxcmOffer[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/trading/instrument-list/instrument-list.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tableSet"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>tableSet</b></span>
+                        <a href="#tableSet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/TableSet.html" target="_self" >TableSet</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    verticaltextHeader: true,
+    openDetailByClickRow: (row: any) &#x3D;&gt; &#x60;/trading/${row.currency.replace(&#x27;/&#x27;, &#x27;&#x27;)}&#x60;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/trading/instrument-list/instrument-list.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {of, switchMap, takeUntil} from &#x27;rxjs&#x27;;
+import {ColumnSet} from &#x27;src/app/model/column-set.model&#x27;;
+import {TableSet} from &#x27;src/app/model/table-set.model&#x27;;
+import {ButtonComponent} from &#x27;src/app/shared/button/button.component&#x27;;
+import {DestroyService} from &#x27;src/app/shared/service/destroy.service&#x27;;
+import {UtilService} from &#x27;src/app/shared/service/util.service&#x27;;
+import {FxcmOffer} from &#x27;../models/fxcm-offer.interface&#x27;;
+import {FxcmService} from &#x27;../service/fxcm.service&#x27;;
+
+@Component({
+  selector: &#x27;app-instrument-list&#x27;,
+  templateUrl: &#x27;./instrument-list.component.html&#x27;,
+  styleUrls: [&#x27;./instrument-list.component.scss&#x27;]
+})
+export class InstrumentListComponent implements OnInit {
+  public instruments: any &#x3D; {};
+  public keyOffers: string[] &#x3D; [];
+  public offers!: FxcmOffer[];
+  public tableSet: TableSet &#x3D; {
+    verticaltextHeader: true,
+    openDetailByClickRow: (row: any) &#x3D;&gt; &#x60;/trading/${row.currency.replace(&#x27;/&#x27;, &#x27;&#x27;)}&#x60;
+  };
+  public columns: ColumnSet[] &#x3D; [
+    {
+      key: &#x27;buy&#x27;,
+      title: &#x27;buy&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;buyTradable&#x27;,
+      title: &#x27;buyTradable&#x27;,
+      type: &#x27;boolean&#x27;
+    },
+    {
+      key: &#x27;currency&#x27;,
+      title: &#x27;currency&#x27;,
+      type: &#x27;string&#x27;
+    },
+    {
+      key: &#x27;defaultSortOrder&#x27;,
+      title: &#x27;defaultSortOrder&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;emr&#x27;,
+      title: &#x27;emr&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;fractionDigits&#x27;,
+      title: &#x27;fractionDigits&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;high&#x27;,
+      title: &#x27;high&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;instrBaseUnitSize&#x27;,
+      title: &#x27;instrBaseUnitSize&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;instrumentType&#x27;,
+      title: &#x27;instrumentType&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;lmr&#x27;,
+      title: &#x27;lmr&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;low&#x27;,
+      title: &#x27;low&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;maxQuantity&#x27;,
+      title: &#x27;maxQuantity&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;minQuantity&#x27;,
+      title: &#x27;minQuantity&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;mmr&#x27;,
+      title: &#x27;mmr&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;offerId&#x27;,
+      title: &#x27;offerId&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;pip&#x27;,
+      title: &#x27;pip&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;pipCost&#x27;,
+      title: &#x27;pipCost&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;pipFraction&#x27;,
+      title: &#x27;pipFraction&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;ratePrecision&#x27;,
+      title: &#x27;ratePrecision&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;rollB&#x27;,
+      title: &#x27;rollB&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;rollS&#x27;,
+      title: &#x27;rollS&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;sell&#x27;,
+      title: &#x27;sell&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;sellTradable&#x27;,
+      title: &#x27;sellTradable&#x27;,
+      type: &#x27;boolean&#x27;
+    },
+    {
+      key: &#x27;spread&#x27;,
+      title: &#x27;spread&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;t&#x27;,
+      title: &#x27;t&#x27;,
+      type: &#x27;number&#x27;
+    },
+    {
+      key: &#x27;time&#x27;,
+      title: &#x27;time&#x27;,
+      type: &#x27;string&#x27;,
+      valuePrepare: (value: string) &#x3D;&gt; this.util.getDate(value)
+    },
+    {
+      key: &#x27;valueDate&#x27;,
+      title: &#x27;valueDate&#x27;,
+      type: &#x27;custom&#x27;,
+      valuePrepare: (value: string) &#x3D;&gt; {
+        return {link: &#x60;/list&#x60;, value};
+      },
+      renderComponent: ButtonComponent
+    },
+    {
+      key: &#x27;volume&#x27;,
+      title: &#x27;volume&#x27;,
+      type: &#x27;number&#x27;
+    }
+  ];
+
+  constructor(private fxcmService: FxcmService, private destroy$: DestroyService, private util: UtilService) {}
+
+  ngOnInit(): void {
+    this.getModel();
+  }
+
+  private getInstruments(): void {
+    const req &#x3D; {method: &#x27;GET&#x27;, resource: &#x27;/trading/get_instruments&#x27;};
+    const transformData &#x3D; (res: any) &#x3D;&gt; {
+      this.instruments &#x3D; res.data.instrument
+        .filter((instru: {visible: boolean}) &#x3D;&gt; instru.visible)
+        .map((item: {symbol: string; order: string}) &#x3D;&gt; {
+          return {symbol: item.symbol, order: item.order};
+        });
+      console.log(this.instruments);
+    };
+    this.callService(req, transformData);
+  }
+
+  private getModel(): void {
+    const req &#x3D; {
+      method: &#x27;GET&#x27;,
+      resource: &#x27;/trading/get_model&#x27;,
+      params: {
+        models: [
+          &#x27;Offer&#x27;,
+          &#x27;OpenPosition&#x27;,
+          &#x27;ClosedPosition&#x27;,
+          &#x27;Order&#x27;,
+          &#x27;Account&#x27;,
+          &#x27;Summary&#x27;,
+          &#x27;LeverageProfile&#x27;,
+          &#x27;Properties&#x27;
+        ]
+      }
+    };
+    const transformData &#x3D; (res: any) &#x3D;&gt; {
+      this.offers &#x3D; res.offers.filter((offer: {instrumentType: number}) &#x3D;&gt; offer.instrumentType &gt; 0);
+      this.keyOffers &#x3D; Object.keys(this.offers[0]);
+    };
+    this.callService(req, transformData);
+  }
+
+  private callService(req: any, callback: (res: any) &#x3D;&gt; void): void {
+    this.fxcmService.getSocket$
+      .pipe(
+        switchMap(isConnected &#x3D;&gt;
+          isConnected ? this.fxcmService.requestProcessor(req) : this.fxcmService.authenticate()
+        ),
+        takeUntil(this.destroy$)
+      )
+      .subscribe(res &#x3D;&gt; (res ? callback(res) : null));
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;offers; else spinner&quot;&gt;
+  &lt;app-table [tableSet]&#x3D;&quot;tableSet&quot; [columns]&#x3D;&quot;columns&quot; [data]&#x3D;&quot;offers&quot;&gt;&lt;/app-table&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;nb-card&gt;
+      &lt;nb-card-body appWidgetForexHeatMap&gt; &lt;/nb-card-body&gt;
+    &lt;/nb-card&gt;
+    &lt;nb-card&gt;
+      &lt;nb-card-body appWidgetScreener&gt; &lt;/nb-card-body&gt;
+    &lt;/nb-card&gt;
+  &lt;/div&gt;
+&lt;/ng-container&gt;
+
+&lt;ng-template #spinner&gt;
+  &lt;nb-spinner&gt;&lt;/nb-spinner&gt;
+&lt;/ng-template&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./instrument-list.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="offers; else spinner">  <app-table [tableSet]="tableSet" [columns]="columns" [data]="offers"></app-table>  <div class="row">    <nb-card>      <nb-card-body appWidgetForexHeatMap> </nb-card-body>    </nb-card>    <nb-card>      <nb-card-body appWidgetScreener> </nb-card-body>    </nb-card>  </div></ng-container><ng-template #spinner>  <nb-spinner></nb-spinner></ng-template></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'InstrumentDetailComponent', 'selector': 'app-instrument-detail'},{'name': 'InstrumentListComponent', 'selector': 'app-instrument-list'},{'name': 'RightBarComponent', 'selector': 'app-right-bar'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'SignInComponent', 'selector': 'app-sign-in'},{'name': 'TableCellComponent', 'selector': 'app-table-cell'},{'name': 'TableComponent', 'selector': 'app-table'},{'name': 'TradingComponent', 'selector': 'app-trading'},{'name': 'WidgetAnalysisComponent', 'selector': 'app-widget-analysis'},{'name': 'WidgetChartComponent', 'selector': 'app-widget-chart'},{'name': 'WidgetForexHeatMapComponent', 'selector': 'app-widget-forex-heat-map'}];
+    var DIRECTIVES = [{'name': 'CellHostDirective', 'selector': '[cellHost]'},{'name': 'WidgetAnalysisDirective', 'selector': '[appWidgetAnalysis]'},{'name': 'WidgetForexHeatMapDirective', 'selector': '[appWidgetForexHeatMap]'},{'name': 'WidgetScreenerDirective', 'selector': '[appWidgetScreener]'}];
+    var ACTUAL_COMPONENT = {'name': 'InstrumentListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'InstrumentListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
